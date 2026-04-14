@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# therapist.md setup script
+# Creates symlinks in ~/.claude/skills/ so Claude Code discovers the skills globally
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SKILLS_DIR="$HOME/.claude/skills"
+SKILLS=(session progress homework formulation)
+PREFIX=""
+
+echo "therapist.md setup"
+echo "=================="
+echo ""
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --prefix)
+      PREFIX="therapist-"
+      shift
+      ;;
+    --help|-h)
+      echo "Usage: ./setup [--prefix]"
+      echo ""
+      echo "Options:"
+      echo "  --prefix    Install skills as /therapist-session, /therapist-progress, etc."
+      echo "              Default: /session, /progress, /homework, /formulation"
+      echo ""
+      echo "This script creates symlinks in ~/.claude/skills/ pointing to this repo."
+      echo "Claude Code will auto-discover the skills as slash commands."
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Run ./setup --help for usage"
+      exit 1
+      ;;
+  esac
+done
+
+# Check for conflicts
+for skill in "${SKILLS[@]}"; do
+  target="$SKILLS_DIR/${PREFIX}${skill}"
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "Error: $target already exists and is not a symlink."
+    echo "Remove it manually if you want to proceed."
+    exit 1
+  fi
+done
+
+# Create skills directory if needed
+mkdir -p "$SKILLS_DIR"
+
+# Create symlinks
+echo "Installing skills to $SKILLS_DIR/"
+echo ""
+for skill in "${SKILLS[@]}"; do
+  source="$SCRIPT_DIR/.claude/skills/$skill"
+  target="$SKILLS_DIR/${PREFIX}${skill}"
+
+  # Remove existing symlink if present
+  [ -L "$target" ] && rm "$target"
+
+  ln -s "$source" "$target"
+  echo "  /${PREFIX}${skill} → $source"
+done
+
+echo ""
+echo "Done. Skills installed:"
+echo ""
+for skill in "${SKILLS[@]}"; do
+  echo "  /${PREFIX}${skill}"
+done
+echo ""
+echo "Open Claude Code in any directory and type /session to start."
+echo ""
+echo "To uninstall:"
+echo "  ./setup --help  (or just delete the symlinks in ~/.claude/skills/)"
