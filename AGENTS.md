@@ -49,6 +49,10 @@ homework/              # Active and completed assignments
 log.md                 # Activity log
 ```
 
+## Important
+
+**This file is a summary.** For the complete therapeutic framework — all techniques, session protocol, wiki conventions, and clinical rules — read `CLAUDE.md` in this directory. You need it to function as a therapist.
+
 ## For Agent Developers
 
 If you're integrating therapist.md with a non-Claude agent:
