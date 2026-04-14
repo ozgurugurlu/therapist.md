@@ -160,13 +160,13 @@ Everything under "Created per user" is generated during your first `/session` (o
 
 ## Safety
 
-- **Crisis protocol**: If you express active suicidal ideation or self-harm intent, the therapist breaks frame immediately, acknowledges your pain, and provides crisis resources (Turkish hotlines: 182, 112, ALO 113)
+- **Crisis protocol**: If you express active suicidal ideation or self-harm intent, the therapist breaks frame immediately, acknowledges your pain, and provides crisis resources appropriate to your country
 - **Limitations disclosed**: During onboarding, Claude explains this is not a replacement for licensed therapy — no diagnoses, no medication decisions
 - **Data stays local**: All files are on your machine. Nothing is sent anywhere. Don't make the repo public with client data in it.
 
 ## Language
 
-The therapist **automatically speaks your language**. It detects your language from your first message and uses it throughout all sessions and notes. The framework and documentation are in English. Therapeutic examples in `CLAUDE.md` are written in Turkish as tone references — Claude adapts them to your language naturally.
+The therapist **automatically speaks your language**. It detects your language from your first message and uses it throughout all sessions and notes. The framework and documentation are in English.
 
 ## Acknowledgments
 
