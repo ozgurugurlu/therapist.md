@@ -2,7 +2,7 @@
 
 A memory-first AI therapist for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Every session builds on the last.
 
-Inspired by [Karpathy's LLM Wiki pattern](https://github.com/karpathy/LLM-wiki) — adapted for therapy. Instead of retrieving context from scratch each time, Claude maintains a structured wiki of therapeutic knowledge that compounds across sessions: patterns, themes, insights, interventions, and progress.
+Inspired by [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — adapted for therapy. Instead of retrieving context from scratch each time, Claude maintains a structured wiki of therapeutic knowledge that compounds across sessions: patterns, themes, insights, interventions, and progress.
 
 ## What It Does
 
@@ -170,7 +170,7 @@ The therapist **automatically speaks your language**. It detects your language f
 
 ## Acknowledgments
 
-- [Andrej Karpathy](https://github.com/karpathy) for the [LLM Wiki pattern](https://github.com/karpathy/LLM-wiki) — the core idea that LLMs should compile and persist knowledge rather than retrieve it fresh each time
+- [Andrej Karpathy](https://github.com/karpathy) for the (https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — the core idea that LLMs should compile and persist knowledge rather than retrieve it fresh each time
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) for the skill/preamble system that makes this possible
 - Evidence-based therapeutic frameworks: CBT, DBT, ACT, and psychodynamic therapy
 
