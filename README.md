@@ -25,7 +25,7 @@ No API keys. No databases. No external services. Just markdown files and Claude 
 ### Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/therapist.md.git
+git clone https://github.com/ozgurugurlu/therapist.md.git
 cd therapist.md
 claude
 ```
