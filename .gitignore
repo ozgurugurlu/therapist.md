@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Client data (personal — each user creates their own via /session onboarding)
+client/
+sessions/
+wiki/patterns/
+wiki/themes/
+wiki/insights/
+wiki/interventions/
+wiki/relationships/
+wiki/progress/
+homework/active/
+homework/completed/
+log.md
+
+# Keep wiki index as it's created by onboarding
+!wiki/index.md
+
+# Claude Code local settings
+.claude/settings.local.json
