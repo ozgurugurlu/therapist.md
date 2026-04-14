@@ -1,6 +1,6 @@
 # therapist.md
 
-A memory-first AI therapist for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Every session builds on the last.
+A memory-first AI Therapist Agent for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Every session builds on the last.
 
 Inspired by [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — adapted for therapy. Instead of retrieving context from scratch each time, Claude maintains a structured wiki of therapeutic knowledge that compounds across sessions: patterns, themes, insights, interventions, and progress.
 
